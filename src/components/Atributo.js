@@ -1,17 +1,24 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class Atributo extends React.Component {
-    render() {
+  render() {
+    const { datatestid, tipoAtrib } = this.props;
 
-        const { datatestid, tipoAtrib } = this.props 
-
-        return (
-            <>
-                <label htmlFor={datatestid}>{tipoAtrib}: </label>
-                <input type="number" data-testid={datatestid} id={datatestid}></input>
-            </>
-        )
-    }
+    return (
+      <>
+        <label htmlFor={ datatestid }>
+          { tipoAtrib }
+        </label>
+        <input type="number" data-testid={ datatestid } id={ datatestid } />
+      </>
+    );
+  }
 }
 
-export default Atributo
+Atributo.propTypes = {
+  datatestid: PropTypes.string.isRequired,
+  tipoAtrib: PropTypes.string.isRequired,
+};
+
+export default Atributo;

@@ -1,32 +1,47 @@
-import React from 'react'
-import './From.css'
-import Atributo from './Atributo.js'
+import React from 'react';
+import './Form.css';
+import Atributo from './Atributo';
 
 class Form extends React.Component {
-    render() {
-        return (
-            <form>
-                <label htmlFor="inpName">Nome: </label>
-                <input type="text" data-testid="name-input" id="inpName"></input>
-                <label htmlFor="inpTextarea">Descrição: </label>
-                <input type="textarea" data-testid="description-input" id="inpTextarea"></input>
-                <Atributo datatestid="attr1-input" tipoAtrib="Força" />
-                <Atributo datatestid="attr2-input" tipoAtrib="Defesa" />
-                <Atributo datatestid="attr3-input" tipoAtrib="Velocidade" />
-                <label htmlFor="inpImage">Imagem: </label>
-                <input type="text" data-testid="image-input" id="inpImage"></input>
-                <select data-testid="rare-input">
-                    <option>normal</option>
-                    <option>raro</option>
-                    <option>muito raro</option>
-                </select>
-                <input type="checkbox" data-testid="trunfo-input" id="inpTrunfo"></input>
-                <label htmlFor="inpTrunfo">Super Trunfo</label>
-                <button data-testid="save-button">Salvar</button>
-            </form>
-            
-        )
-    }
+  render() {
+    return (
+      <form>
+        <label htmlFor="inpName">
+          <p>Força:</p>
+          <input type="text" data-testid="name-input" id="inpName" />
+        </label>
+        <label htmlFor="inpTextarea">
+          <p>Descrição:</p>
+          <input
+            type="textarea"
+            data-testid="description-input"
+            id="inpTextarea"
+          />
+        </label>
+        <Atributo datatestid="attr1-input" tipoAtrib="Força" />
+        <Atributo datatestid="attr2-input" tipoAtrib="Defesa" />
+        <Atributo datatestid="attr3-input" tipoAtrib="Velocidade" />
+        <label htmlFor="inpImage">
+          <p>Imagem:</p>
+          <input type="text" data-testid="image-input" id="inpImage" />
+        </label>
+
+        <select data-testid="rare-input">
+          <option>normal</option>
+          <option>raro</option>
+          <option>muito raro</option>
+        </select>
+
+        <label htmlFor="inpTrunfo">
+          <input type="checkbox" data-testid="trunfo-input" id="inpTrunfo" />
+          <p>Super Trunfo</p>
+        </label>
+        <button type="submit" data-testid="save-button">
+          Salvar
+        </button>
+      </form>
+    );
+  }
 }
 
-export default Form
+export default Form;
