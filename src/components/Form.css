@@ -2,3 +2,7 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.card {
+  border: 1px solid black;
+}

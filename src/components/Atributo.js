@@ -7,11 +7,11 @@ class Atributo extends React.Component {
 
     return (
       <>
-        <label htmlFor={ datatestid }>{ tipoAtrib }</label>
+        <label htmlFor={ tipoAtrib }>{ tipoAtrib }</label>
         <input
           type="number"
           data-testid={ datatestid }
-          id={ datatestid }
+          id={ tipoAtrib }
           value={ cardAttr }
           onChange={ onInputChange }
         />

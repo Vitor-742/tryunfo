@@ -22,12 +22,12 @@ class Form extends React.Component {
 
     return (
       <form>
-        <label htmlFor="iNam">
+        <label htmlFor="inpName">
           <p>Nome:</p>
           <input
             type="text"
             data-testid="name-input"
-            id="iNam"
+            id="inpName"
             value={ cardName }
             onChange={ onInputChange }
           />
@@ -75,6 +75,7 @@ class Form extends React.Component {
           data-testid="rare-input"
           value={ cardRare }
           onChange={ onInputChange }
+          id="selectRare"
         >
           <option>normal</option>
           <option>raro</option>
