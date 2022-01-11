@@ -8,9 +8,19 @@ class App extends React.Component {
     super();
     this.state = {
       isSaveButtonDisabled: true,
+      inpName: '',
+      inpTextarea: '',
+      Força: 0,
+      selectRare: 'normal',
+      Velocidade: 0,
+      Defesa: 0,
+      inpImage: '',
+      mycards: [],
+      inpTrunfo: false,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.testaBotao = this.testaBotao.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   onInputChange(event) {
@@ -19,6 +29,45 @@ class App extends React.Component {
       : event.target.value;
     this.setState({ [event.target.id]: value }, () => this.testaBotao());
     /* console.log(this.state); */
+  }
+
+  onSaveButtonClick = () => { // descobrir pq o salvar nao volta sozinha na segunda
+    const {
+      inpName,
+      inpImage,
+      inpTextarea,
+      inpTrunfo,
+      Força,
+      Velocidade,
+      Defesa,
+      selectRare,
+      mycards,
+    } = this.state;
+
+    const newCard = {
+      inpName,
+      inpImage,
+      inpTextarea,
+      Força,
+      Velocidade,
+      Defesa,
+      selectRare,
+      inpTrunfo,
+    };
+
+    /* this.setState({mycards: [...this.state.mycards, newCard]}) */
+    this.setState({
+      isSaveButtonDisabled: true,
+      inpName: '',
+      inpTextarea: '',
+      Força: 0,
+      Velocidade: 0,
+      selectRare: 'normal',
+      Defesa: 0,
+      inpImage: '',
+      mycards: [...mycards, newCard],
+      inpTrunfo: false,
+    });
   }
 
   testaBotao() {
@@ -53,10 +102,6 @@ class App extends React.Component {
     }
   }
 
-  /* onSaveButtonClick = (event) => {
-    console.log(event.target)
-  } */
-
   render() {
     const {
       inpName,
@@ -75,7 +120,15 @@ class App extends React.Component {
         <Form
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
-          /* onSaveButtonClick={this.onSaveButtonClick} */
+          onSaveButtonClick={ this.onSaveButtonClick }
+          cardName={ inpName }// fazer desse jeito com os outros ----------------------
+          cardDescription={ inpTextarea }
+          cardAttr1={ Força }
+          cardAttr2={ Defesa }
+          cardAttr3={ Velocidade }
+          cardImage={ inpImage }
+          cardRare={ selectRare }
+          cardTrunfo={ inpTrunfo }
         />
         <Card
           cardName={ inpName }
