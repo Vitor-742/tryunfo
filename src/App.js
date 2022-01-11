@@ -1,9 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
-import './components/constants';
-
-// aquela funcao e booleano , fazer outra funcao que muda ela dentro do estado
+import { maxPoints, maxPointsAttr } from './components/constants';
 
 class App extends React.Component {
   constructor() {
@@ -16,16 +14,14 @@ class App extends React.Component {
   }
 
   onInputChange(event) {
-    /* this.testaBotao(); */
     const value = event.target.type === 'checkbox'
       ? event.target.checked
       : event.target.value;
     this.setState({ [event.target.id]: value }, () => this.testaBotao());
-    console.log(this.state);
+    /* console.log(this.state); */
   }
 
   testaBotao() {
-    // tem que retornar booleano - true para inativo
     const { inpName, inpTextarea, inpImage, Força, Defesa, Velocidade } = this.state;
 
     const VelocidadeNum = Number(Velocidade);
@@ -60,8 +56,6 @@ class App extends React.Component {
   /* onSaveButtonClick = (event) => {
     console.log(event.target)
   } */
-
-  // isSaveButtonDisabled
 
   render() {
     const {
