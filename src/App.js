@@ -17,6 +17,7 @@ class App extends React.Component {
       inpImage: '',
       mycards: [],
       inpTrunfo: false,
+      hasTrunfo: false,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.testaBotao = this.testaBotao.bind(this);
@@ -28,7 +29,6 @@ class App extends React.Component {
       ? event.target.checked
       : event.target.value;
     this.setState({ [event.target.id]: value }, () => this.testaBotao());
-    /* console.log(this.state); */
   }
 
   onSaveButtonClick = () => { // descobrir pq o salvar nao volta sozinha na segunda
@@ -44,6 +44,8 @@ class App extends React.Component {
       mycards,
     } = this.state;
 
+    if (inpTrunfo === true) this.setState({ hasTrunfo: true });
+
     const newCard = {
       inpName,
       inpImage,
@@ -55,7 +57,6 @@ class App extends React.Component {
       inpTrunfo,
     };
 
-    /* this.setState({mycards: [...this.state.mycards, newCard]}) */
     this.setState({
       isSaveButtonDisabled: true,
       inpName: '',
@@ -113,6 +114,7 @@ class App extends React.Component {
       selectRare,
       inpTrunfo,
       isSaveButtonDisabled,
+      hasTrunfo,
     } = this.state;
 
     return (
@@ -121,7 +123,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
-          cardName={ inpName }// fazer desse jeito com os outros ----------------------
+          cardName={ inpName }
           cardDescription={ inpTextarea }
           cardAttr1={ Força }
           cardAttr2={ Defesa }
@@ -129,6 +131,7 @@ class App extends React.Component {
           cardImage={ inpImage }
           cardRare={ selectRare }
           cardTrunfo={ inpTrunfo }
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ inpName }
