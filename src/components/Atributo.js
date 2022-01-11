@@ -10,6 +10,7 @@ class Atributo extends React.Component {
         <label htmlFor={ tipoAtrib }>{ tipoAtrib }</label>
         <input
           type="number"
+          min="0"
           data-testid={ datatestid }
           id={ tipoAtrib }
           value={ cardAttr }

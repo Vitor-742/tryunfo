@@ -30,6 +30,7 @@ class Form extends React.Component {
             id="inpName"
             value={ cardName }
             onChange={ onInputChange }
+            name="cardName"
           />
         </label>
         <label htmlFor="inpTextarea">
@@ -40,6 +41,7 @@ class Form extends React.Component {
             id="inpTextarea"
             value={ cardDescription }
             onChange={ onInputChange }
+            name="cardDescription"
           />
         </label>
         <Atributo
@@ -47,18 +49,21 @@ class Form extends React.Component {
           tipoAtrib="Força"
           cardAttr={ cardAttr1 }
           onInputChange={ onInputChange }
+          name="cardAttr1"
         />
         <Atributo
           datatestid="attr2-input"
           tipoAtrib="Defesa"
           cardAttr={ cardAttr2 }
           onInputChange={ onInputChange }
+          name="cardAttr2"
         />
         <Atributo
           datatestid="attr3-input"
           tipoAtrib="Velocidade"
           cardAttr={ cardAttr3 }
           onInputChange={ onInputChange }
+          name="cardAttr3"
         />
         <label htmlFor="inpImage">
           <p>Imagem:</p>
@@ -68,6 +73,7 @@ class Form extends React.Component {
             id="inpImage"
             value={ cardImage }
             onChange={ onInputChange }
+            name="cardImage"
           />
         </label>
 
@@ -76,6 +82,7 @@ class Form extends React.Component {
           value={ cardRare }
           onChange={ onInputChange }
           id="selectRare"
+          name="cardRare"
         >
           <option>normal</option>
           <option>raro</option>
@@ -87,14 +94,16 @@ class Form extends React.Component {
             type="checkbox"
             data-testid="trunfo-input"
             id="inpTrunfo"
+            name="cardTrunfo"
             checked={ cardTrunfo }
             onChange={ onInputChange }
           />
           <p>Super Trunfo</p>
         </label>
         <button
-          type="submit"
+          type="button" // type pode ser submit
           data-testid="save-button"
+          name="isSaveButtonDisabled"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
         >

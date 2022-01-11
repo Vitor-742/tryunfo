@@ -6,11 +6,11 @@ class Card extends React.Component {
     const {
       cardName,
       cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
+      cardAttr1 = 0,
+      cardAttr2 = 0,
+      cardAttr3 = 0,
       cardImage,
-      cardRare = '.normal',
+      cardRare = 'normal',
       cardTrunfo,
     } = this.props;
 
@@ -23,7 +23,6 @@ class Card extends React.Component {
         <p data-testid="attr2-card">{`Defesa: ${cardAttr2}`}</p>
         <p data-testid="attr3-card">{`Velocidade: ${cardAttr3}`}</p>
         <p data-testid="rare-card">{`Raridade: ${cardRare}`}</p>
-        {console.log(cardTrunfo)}
         {cardTrunfo === true && <p data-testid="trunfo-card">Super Trunfo</p>}
       </div>
     );
