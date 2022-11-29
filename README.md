@@ -2,7 +2,7 @@ __TRYUNFO__
 
 Projeto desenvolvido por Vitor Campos
 
-Neste projeto foi desenvolvido um jogo no estilo Super Trunfo, usando essa aplicação uma pessoa usuária é ser capaz de:
+Neste projeto foi desenvolvido um jogo no estilo Super Trunfo, usando essa aplicação uma pessoa usuária é capaz de:
 
 Criar um baralho, com o tema livre;
 
